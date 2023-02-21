@@ -4,6 +4,7 @@ const router: Router = express.Router();
 import userController from './UserController'
 const User = new userController;
 router.get('/', User.getUsers);
+
 const Validation = [
   check('name', 'Name is a required filed').notEmpty(),
   check('emailId', "Email id is a required filed").notEmpty().isEmail().withMessage("Require a valid email id!!")
